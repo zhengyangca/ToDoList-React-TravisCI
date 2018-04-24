@@ -1,15 +1,17 @@
 language: node_js
 node_js: stable
+branchs:
+  only:
+  - master
 install:
 - npm install
 script:
-- npm test
 - npm build
+addons:
+  ssh_known_hosts: 47.55.217.201
 before_install:
 - openssl aes-256-cbc -K $encrypted_7754af85956f_key -iv $encrypted_7754af85956f_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
-- echo -e "Host 173.255.241.13\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh river7527@173.255.241.13 "./todolist_travis_build"
+- ssh river7527@173.255.241.13 -o StrictHostKeyChecking=no 'cd ~/npm_workspace/todolist/ && git pull && npm install'
