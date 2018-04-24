@@ -15,4 +15,4 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh river7527@173.255.241.13 -o StrictHostKeyChecking=no 'cd ~/npm_workspace/todolist/ && git pull && npm install'
+- ssh river7527@173.255.241.13 -o StrictHostKeyChecking=no 'cd ~/npm_workspace/todolist/ToDoList-React && git pull && npm install'
