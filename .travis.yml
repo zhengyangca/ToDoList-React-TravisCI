@@ -6,6 +6,7 @@ branchs:
 install:
 - npm install
 script:
+- npm test
 - npm build
 addons:
   ssh_known_hosts: 47.55.217.201
