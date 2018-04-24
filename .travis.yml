@@ -12,4 +12,6 @@ before_install:
 - echo -e "Host 173.255.241.13\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh river7527@173.255.241.13 'cd ~/npm_workspace/ && git pull'  
+- ssh-add .travis/deploy_key.pem
+- git remote add deploy https://github.com/zhengyangca/ToDoList-React.git
+- git push deploy
