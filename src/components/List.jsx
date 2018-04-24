@@ -37,7 +37,7 @@ class List extends Component {
                         editItem={this.props.editItem}
                         context={this.props.context} />
                 ) : <div className="alert alert-danger searchNoResult">
-                        Type the text and press <b>"Enter"</b> to add item.
+                        Typeeeeeeeeee the text and press <b>"Enter"</b> to add item.
                         </div>}
             </ul>
         )
