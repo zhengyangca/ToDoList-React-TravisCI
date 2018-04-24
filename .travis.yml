@@ -12,5 +12,5 @@ before_install:
 - echo -e "Host 173.255.241.13\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- chmod 755 ~/npm_workspace/todolist/todolist_travis_build.sh
+- chmod +x ~/npm_workspace/todolist/todolist_travis_build.sh
 - ssh river7527@173.255.241.13 "./npm_workspace/todolist/todolist_travis_build.sh"
